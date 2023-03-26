@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { computed } from 'vue';
+
+import HelloWorld from './components/HelloWorld.vue';
+
+const total = computed(() => {
+  return 1 + 1;
+});
 </script>
 
 <template>
@@ -7,10 +13,16 @@ import HelloWorld from './components/HelloWorld.vue'
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
+    <p>{{ total }}</p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam mollitia sed illo quas aliquam, est consectetur
+      amet nulla, vel, adipisci obcaecati quam velit rerum ullam sint suscipit enim dolores iure.
+    </p>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+
   <HelloWorld msg="Vite + Vue" />
 </template>
 
