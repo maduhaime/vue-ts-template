@@ -1,8 +1,10 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode",
+    "aaron-bond.better-comments",
+    "bierner.github-markdown-preview",
     "dbaeumer.vscode-eslint",
-    "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
+    "esbenp.prettier-vscode",
+    "thinker.sort-json",
+    "Vue.volar"
   ]
 }
