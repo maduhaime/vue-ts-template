@@ -8,6 +8,9 @@ export default mergeConfig(
     test: {
       globals: true,
       environment: 'jsdom',
+      coverage: {
+        exclude: ['src/main.ts', 'src/router/**'],
+      },
     },
   }),
 );

@@ -1,9 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { useCounter } from '@/composables/useCounter';
 
-defineProps<{ headerTitle: string }>();
+type Props = {
+  headerTitle: string | null;
+};
 
-const count = ref(0);
+const props = defineProps<Props>();
+
+const { count, increase } = useCounter(0);
+
+// Required for testing
+defineExpose({ count });
 </script>
 
 <template>
@@ -14,7 +21,7 @@ const count = ref(0);
     <div class="card-content">
       <div class="content">
         <div class="control">
-          <button type="button" class="button is-primary" @click="count++">count is {{ count }}</button>
+          <button type="button" class="button is-primary" @click="increase">count is {{ count }}</button>
         </div>
       </div>
     </div>

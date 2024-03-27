@@ -1,7 +1,11 @@
 import { expect, test } from 'vitest';
 
-import { helloWorld } from '@/utils/helloWorld.ts';
+import { helloWorld } from '@/utils/helloWorld';
 
-test('helloWord is Hello World !', () => {
-  expect(helloWorld()).toBe('Hello World !');
+describe('helloWord', () => {
+  const str = 'Hello World !';
+
+  test(`returns ${str}`, () => {
+    expect(helloWorld()).toBe(str);
+  });
 });

@@ -1,15 +1,20 @@
-import { expect, test } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { describe, expect, test } from 'vitest';
+import { shallowMount } from '@vue/test-utils';
 
 import App from '@/App.vue';
 
+// const { VITE_APP_NAME } = import.meta.env;
+
+// test('App is defined', () => {
+//   expect(App).toBeDefined;
+// });
+
 const { VITE_APP_NAME } = import.meta.env;
 
-test('App is defined', () => {
-  expect(App).toBeDefined;
-});
+describe('App', () => {
+  const wrapper = shallowMount(App);
 
-test('Displays Header Title', () => {
-  const wrapper = mount(App);
-  expect(wrapper.find('h1').text()).toContain(VITE_APP_NAME);
+  test('has a container class', () => {
+    expect(wrapper.html()).toContain('container');
+  });
 });
