@@ -4,19 +4,24 @@ import { ref } from 'vue';
 import { useCounter } from '@/composables/useCounter';
 
 describe('useCounter', () => {
-  const { count, increase, decrease } = useCounter();
+  const { count, increase, decrease, reset } = useCounter();
 
-  test('counter has a default value of zero', () => {
+  test('has a default value of zero', () => {
     expect(count.value).toStrictEqual(0);
   });
 
-  test('count increments', () => {
+  test('increments count', () => {
     increase();
     expect(count.value).toStrictEqual(1);
   });
 
-  test('counter decrements', () => {
+  test('decrements count', () => {
     decrease();
+    expect(count.value).toStrictEqual(0);
+  });
+
+  test('resets the counter', () => {
+    reset();
     expect(count.value).toStrictEqual(0);
   });
 });

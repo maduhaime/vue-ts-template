@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'vitest';
 import { mount } from '@vue/test-utils';
 
-import CounterDemo from '@/components/CounterDemo.vue';
+import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
 
 describe('CounterDemo', () => {
-  const wrapper = mount(CounterDemo, {
+  const wrapper = mount(LocalCounterDemo, {
     props: {
       headerTitle: 'Hello world',
     },
@@ -15,9 +15,9 @@ describe('CounterDemo', () => {
   });
 
   test('Increment the counter', async () => {
-    const button = wrapper.find('button');
-    await button.trigger('click');
+    const btn = wrapper.find('[data-test="btn"]');
+    await btn.trigger('click');
 
-    expect(wrapper.vm.count).toBe(1);
+    expect(btn.text()).toContain(1);
   });
 });

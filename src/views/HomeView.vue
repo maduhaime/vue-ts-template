@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CounterDemo from '@/components/CounterDemo.vue';
+import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
+import StoreCounterDemo from '@/components/StoreCounterDemo.vue';
 
 const { VITE_APP_NAME } = import.meta.env;
 </script>
@@ -47,11 +48,15 @@ const { VITE_APP_NAME } = import.meta.env;
     </div>
   </div>
   <div class="columns">
-    <div class="column"></div>
-    <div class="column is-half has-text-centered">
-      <CounterDemo header-title="Component and Counter Demo" />
+    <div class="column is-one-third">
+      <LocalCounterDemo header-title="Component and Local Counter Demo" />
     </div>
-    <div class="column"></div>
+    <div class="column is-one-third">
+      <StoreCounterDemo header-title="Store Counter Demo (1)" />
+    </div>
+    <div class="column is-one-third">
+      <StoreCounterDemo header-title="Store Counter Demo (2)" />
+    </div>
   </div>
   <div class="columns">
     <div class="column has-text-centered">

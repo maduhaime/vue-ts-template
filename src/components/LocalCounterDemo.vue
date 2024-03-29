@@ -21,7 +21,9 @@ defineExpose({ count });
     <div class="card-content">
       <div class="content">
         <div class="control">
-          <button type="button" class="button is-primary" @click="increase">count is {{ count }}</button>
+          <button data-test="btn" type="button" class="button is-primary" @click="increase()">
+            count is {{ count }}
+          </button>
         </div>
       </div>
     </div>
