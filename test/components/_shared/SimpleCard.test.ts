@@ -8,9 +8,16 @@ describe('SimpleCard', () => {
     props: {
       headerTitle: 'Hello world',
     },
+    slots: {
+      default: 'Main Content',
+    },
   });
 
-  test('Displays the header title', () => {
+  test('displays the header title', () => {
     expect(wrapper.text()).toContain('Hello world');
+  });
+
+  test('renders the default slot', () => {
+    expect(wrapper.html()).toContain('Main Content');
   });
 });

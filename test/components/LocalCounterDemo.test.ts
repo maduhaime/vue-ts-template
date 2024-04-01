@@ -6,7 +6,7 @@ import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
 describe('LocalCounterDemo', () => {
   const wrapper = mount(LocalCounterDemo);
 
-  test('Increment the local counter', async () => {
+  test('increments the local counter', async () => {
     const btn = wrapper.find('[data-test="btn"]');
     await btn.trigger('click');
 
