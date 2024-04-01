@@ -3,18 +3,10 @@ import { mount } from '@vue/test-utils';
 
 import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
 
-describe('CounterDemo', () => {
-  const wrapper = mount(LocalCounterDemo, {
-    props: {
-      headerTitle: 'Hello world',
-    },
-  });
+describe('LocalCounterDemo', () => {
+  const wrapper = mount(LocalCounterDemo);
 
-  test('Displays the header title', () => {
-    expect(wrapper.text()).toContain('Hello world');
-  });
-
-  test('Increment the counter', async () => {
+  test('Increment the local counter', async () => {
     const btn = wrapper.find('[data-test="btn"]');
     await btn.trigger('click');
 

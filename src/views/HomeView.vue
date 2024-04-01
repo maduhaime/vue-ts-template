@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import SimpleCard from '@/components/_shared/SimpleCard.vue';
 import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
 import StoreCounterDemo from '@/components/StoreCounterDemo.vue';
 
@@ -49,13 +50,19 @@ const { VITE_APP_NAME } = import.meta.env;
   </div>
   <div class="columns">
     <div class="column is-one-third">
-      <LocalCounterDemo header-title="Component and Local Counter Demo" />
+      <SimpleCard header-title="Local Counter Demo">
+        <LocalCounterDemo />
+      </SimpleCard>
     </div>
     <div class="column is-one-third">
-      <StoreCounterDemo header-title="Store Counter Demo (1)" />
+      <SimpleCard header-title="Store Counter Demo (1)">
+        <StoreCounterDemo />
+      </SimpleCard>
     </div>
     <div class="column is-one-third">
-      <StoreCounterDemo header-title="Store Counter Demo (2)" />
+      <SimpleCard header-title="Store Counter Demo (2)">
+        <StoreCounterDemo />
+      </SimpleCard>
     </div>
   </div>
   <div class="columns">
