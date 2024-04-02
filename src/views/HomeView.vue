@@ -2,6 +2,7 @@
 import SimpleCard from '@/components/_shared/SimpleCard.vue';
 import LocalCounterDemo from '@/components/LocalCounterDemo.vue';
 import StoreCounterDemo from '@/components/StoreCounterDemo.vue';
+import ApiCallDemo from '@/components/ApiCallDemo.vue';
 
 const { VITE_APP_NAME } = import.meta.env;
 </script>
@@ -66,12 +67,20 @@ const { VITE_APP_NAME } = import.meta.env;
     </div>
   </div>
   <div class="columns">
+    <div class="column">
+      <SimpleCard header-title="Api Call">
+        <ApiCallDemo />
+      </SimpleCard>
+    </div>
+  </div>
+  <div class="columns">
     <div class="column has-text-centered">
       <h4 class="title is-4">Documentation</h4>
 
-      <p>
-        <a href="https://router.vuejs.org">Vue Router</a> |
-        <a href="https://test-utils.vuejs.org">Vue Test Utils</a>
+      <p class="documentation">
+        <a href="https://router.vuejs.org" target="_blank">Vue Router</a> |
+        <a href="https://test-utils.vuejs.org" target="_blank">Vue Test Utils</a> |
+        <a href="https://axios-http.com/" target="_blank">Axios</a>
       </p>
     </div>
   </div>
@@ -98,4 +107,19 @@ const { VITE_APP_NAME } = import.meta.env;
   height: 3em;
   margin: 1em;
 }
+
+/*
+.documentation {
+  a {
+    &::after {
+      content: ' |';
+    }
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
+*/
 </style>

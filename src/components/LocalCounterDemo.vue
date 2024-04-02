@@ -2,9 +2,6 @@
 import { useCounter } from '@/composables/useCounter';
 
 const { count, increase } = useCounter(0);
-
-// Required for testing
-// defineExpose({ count });
 </script>
 
 <template>

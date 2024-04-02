@@ -10,6 +10,6 @@ describe('LocalCounterDemo', () => {
     const btn = wrapper.find('[data-test="btn"]');
     await btn.trigger('click');
 
-    expect(btn.text()).toContain(1);
+    expect(btn.text()).toBe('count is 1');
   });
 });
