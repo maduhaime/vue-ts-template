@@ -15,7 +15,7 @@ const technologies = computed(() => {
         <slot></slot>
       </p>
       <p class="is-size-7">
-        <strong>{{ technologies }}</strong> and others trademarks are the property of their respective owners.
+        <strong>{{ technologies }}</strong> {{ $t('footer.trademarks') }}
       </p>
     </div>
   </footer>
