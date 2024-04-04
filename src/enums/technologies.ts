@@ -1,0 +1,15 @@
+export enum Tech {
+  AXIOS = 'Axios',
+  BULMA = 'Bulma',
+  ESLINT = 'ESLint',
+  NODE = 'Nodejs',
+  PINIA = 'Pinia',
+  PRETTIER = 'Prettier',
+  SASS = 'Sass',
+  TS = 'TypeScript',
+  VITE = 'Vite',
+  VITEST = 'Vitest',
+  VUE = 'Vue',
+  VUE_ROUTER = 'Vue-Router',
+  VUE_TEST_UTILS = 'Vue Test Utils',
+}
