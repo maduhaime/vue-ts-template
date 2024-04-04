@@ -2,10 +2,17 @@
 import { onMounted, ref } from 'vue';
 import { userService } from '@/services/UserService';
 
-const users = ref();
+import type { Ref } from 'vue';
+import type { User } from '@/services/UserService';
+
+const users: Ref<User[] | undefined> = ref();
 
 onMounted(async () => {
-  users.value = await userService.getUsers();
+  try {
+    users.value = await userService.getUsers();
+  } catch (error) {
+    console.log(`ApiCallDemo.vue onMounted() error: ${error}`);
+  }
 });
 </script>
 

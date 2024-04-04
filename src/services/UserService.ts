@@ -3,12 +3,12 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosError } from 'axios';
 
-const VITE_API_BASE_URL = 'https://jsonplaceholder.typicode.com';
+const { VITE_API_BASE_URL } = import.meta.env;
 
-type User = {
+export type User = {
   id: number;
-  firstname: string;
-  lastname: string;
+  name: string;
+  email: string;
 };
 
 const axiosInstance = axios.create({
@@ -23,15 +23,15 @@ export class UserService {
       const response = await this.httpClient.get<User[]>(`/users`);
       return response.data;
     } catch (error) {
-      return this.handleError(error);
+      this.handleError(error);
     }
   }
 
   handleError(err: unknown) {
     const error = err as AxiosError;
-    console.error(error);
+    console.error(`UserService.ts handleError() error: ${error}`);
 
-    return error;
+    // TODO: Handle UX here...
   }
 }
 
