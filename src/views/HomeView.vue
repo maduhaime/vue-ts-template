@@ -80,7 +80,9 @@ const { VITE_APP_NAME } = import.meta.env;
       <p class="documentation">
         <a href="https://router.vuejs.org" target="_blank">Vue Router</a> |
         <a href="https://test-utils.vuejs.org" target="_blank">Vue Test Utils</a> |
-        <a href="https://axios-http.com/" target="_blank">Axios</a>
+        <a href="https://axios-http.com/" target="_blank">Axios</a> |
+        <a href="https://ajv.js.org/" target="_blank">AVJ</a> |
+        <a href="https://json-schema.org/" target="_blank">JSON Schema</a>
       </p>
     </div>
   </div>

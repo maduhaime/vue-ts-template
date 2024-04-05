@@ -1,7 +1,9 @@
 export enum Tech {
+  AJV = 'AJV',
   AXIOS = 'Axios',
   BULMA = 'Bulma',
   ESLINT = 'ESLint',
+  JSON_SCHEMA = 'JSON Schema',
   NODE = 'Nodejs',
   PINIA = 'Pinia',
   PRETTIER = 'Prettier',

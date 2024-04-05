@@ -5,8 +5,8 @@ import { createPinia } from 'pinia';
 import App from '@/App.vue';
 import { router } from '@/router';
 
-import en_US from '@/locales/en_US';
-import fr_CA from '@/locales/fr_CA';
+import en_US from '@/locales/en_US.json';
+import fr_CA from '@/locales/fr_CA.json';
 
 const app = createApp(App);
 const pinia = createPinia();
