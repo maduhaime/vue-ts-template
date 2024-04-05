@@ -32,6 +32,9 @@ const { VITE_APP_NAME } = import.meta.env;
       <a href="https://bulma.io" target="_blank">
         <img src="@/assets/bulma.svg" class="minor bulma" alt="Bulma logo" />
       </a>
+      <a href="https://axios-http.com/" target="_blank">
+        <img src="@/assets/axios.svg" class="minor axios" alt="Axios logo" />
+      </a>
       <a href="https://vitest.dev" target="_blank">
         <img src="@/assets/vitest.svg" class="minor vitest" alt="Vitest logo" />
       </a>
