@@ -1,28 +1,39 @@
-// stores/counter.spec.ts
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import axios, { AxiosError } from 'axios';
 import { UserService } from '@/services/UserService';
 
 describe('UserService', () => {
   test('gets users', async () => {
-    const mockData = [{ id: 1 }, { id: 2 }];
+    const dataMock = [{ id: 1 }, { id: 2 }];
 
     const axiosInstance = axios.create();
-    axiosInstance.get = vi.fn().mockImplementation(() => Promise.resolve({ data: mockData }));
+
+    // Mocking Resolved Promise on axios.get calls
+    // axiosInstance.get = vi.fn().mockImplementation(() => Promise.resolve({ data: mockData }));
+    axiosInstance.get = vi.fn().mockResolvedValue({ data: dataMock });
 
     const userService = new UserService(axiosInstance);
-    expect(await userService.getUsers()).toStrictEqual(mockData);
+    expect(await userService.getUsers()).toStrictEqual(dataMock);
   });
 
-  test('error', async () => {
-    const mockError = new AxiosError('My Error');
-
+  test('axios error', async () => {
+    const mockError = new AxiosError('Async error');
     const axiosInstance = axios.create();
-    axiosInstance.get = vi.fn().mockRejectedValue(() => {
-      throw mockError;
-    });
+
+    // Mocking Rejected Promise on axios.get calls
+    // axiosInstance.get = vi.fn().mockImplementation(() => Promise.reject(mockError));
+    axiosInstance.get = vi.fn().mockRejectedValue(mockError);
+
+    // Confirmation of successfull mocking
+    expect(async () => await axiosInstance.get('/')).rejects.toBe(mockError);
 
     const userService = new UserService(axiosInstance);
-    expect(await userService.getUsers()).toThrow(mockError);
+
+    const handleErrorMock = vi.spyOn(userService, 'handleError');
+
+    await userService.getUsers();
+
+    expect(handleErrorMock).toHaveBeenCalledTimes(1);
+    expect(handleErrorMock).toHaveBeenCalledWith(mockError);
   });
 });
