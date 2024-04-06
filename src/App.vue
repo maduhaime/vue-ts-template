@@ -1,18 +1,16 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router';
 import MainNavigation from '@/components/_shared/MainNavigation.vue';
 import PageFooter from '@/components/_shared/PageFooter.vue';
-import { computed } from 'vue';
 
 const year = new Date().getFullYear();
 </script>
 
 <template>
   <MainNavigation></MainNavigation>
-  <div class="container my-6">
-    <main>
-      <RouterView />
-    </main>
-  </div>
+  <main>
+    <RouterView />
+  </main>
   <PageFooter>&copy {{ year }} - Marc-Antoine Duhaime</PageFooter>
 </template>
 
