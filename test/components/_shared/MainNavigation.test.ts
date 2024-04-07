@@ -21,4 +21,15 @@ describe('MainNavigation', () => {
     const link = wrapper.findComponent(RouterLink);
     expect(link.props().to).toStrictEqual('/');
   });
+
+  test('toggles menu on burger click', async () => {
+    const burger = wrapper.find('.navbar-burger');
+    const menu = wrapper.find('.navbar-menu');
+
+    burger.trigger('click');
+    expect(menu.attributes('class')).toContain('is-active');
+
+    burger.trigger('click');
+    expect(menu.attributes('class')).not.toContain('is-active');
+  });
 });

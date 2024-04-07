@@ -1,8 +1,10 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router';
 
 import { routes } from '@/router/routes';
 
 export const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
+  linkActiveClass: 'is-active',
+  linkExactActiveClass: 'is-active',
   routes,
 });
