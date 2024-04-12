@@ -1,5 +1,9 @@
 {
   "footer": {
     "trademarks": "et autres marques de commerce appartiennent à leurs propriétaires respectifs."
+  },
+  "navigation": {
+    "about": "Accueil",
+    "home": "À propos"
   }
 }

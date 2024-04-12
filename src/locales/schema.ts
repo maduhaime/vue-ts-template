@@ -8,6 +8,13 @@ export const schema = {
       },
       required: ['trademarks'],
     },
+    navigation: {
+      type: 'object',
+      properties: {
+        home: { type: 'string' },
+        about: { type: 'string' },
+      },
+    },
   },
   required: ['footer'],
   additionalProperties: false,

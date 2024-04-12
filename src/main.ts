@@ -1,20 +1,13 @@
 import { createApp } from 'vue';
-import { createI18n } from 'vue-i18n';
 import { createPinia } from 'pinia';
 
 import App from '@/App.vue';
-import { router } from '@/router';
+import { i18n } from '@/locales/i18n';
 
-import en_US from '@/locales/en_US.json';
-import fr_CA from '@/locales/fr_CA.json';
+import { router } from '@/router';
 
 const app = createApp(App);
 const pinia = createPinia();
-
-const i18n = createI18n({
-  locale: 'en_US',
-  messages: { en_US, fr_CA },
-});
 
 app.use(router);
 app.use(pinia);

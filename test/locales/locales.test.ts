@@ -1,5 +1,5 @@
 import Ajv from 'ajv';
-import { schema } from './schema';
+import { schema } from '@/locales/schema';
 
 import en_US from '@/locales/en_US.json';
 import fr_CA from '@/locales/fr_CA.json';

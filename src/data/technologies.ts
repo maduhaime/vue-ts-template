@@ -119,4 +119,11 @@ export const technologies: Technology[] = [
     link: 'https://json-schema.org',
     thumb: 'json-schema.svg',
   },
+  {
+    name: 'Vue I18n',
+    tagline: 'Internationalization plugin for Vue.js.',
+    description: 'Easy, powerful, and component-oriented for Vue.js',
+    link: 'https://vue-i18n.intlify.dev',
+    thumb: 'vue-i18n.svg',
+  },
 ];

@@ -1,13 +1,18 @@
-import { describe, test, vi, expect } from 'vitest';
+import { describe, test, expect } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
 import { RouterLink } from 'vue-router';
 
+import { i18n } from '@/locales/i18n';
+import { router } from '@/router/index';
+
 import MainNavigation from '@/components/_shared/MainNavigation.vue';
 
-vi.mock('vue-router');
-
 describe('MainNavigation', () => {
-  const wrapper = shallowMount(MainNavigation);
+  const wrapper = shallowMount(MainNavigation, {
+    global: {
+      plugins: [router],
+    },
+  });
 
   test('Is defined', () => {
     expect(wrapper).toBeDefined();
